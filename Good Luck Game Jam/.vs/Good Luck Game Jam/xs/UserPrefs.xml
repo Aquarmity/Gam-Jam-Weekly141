@@ -1,0 +1,28 @@
+﻿<Properties StartupConfiguration="{C1B31BA1-2623-786B-EE45-02F472329334}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MovingObject.cs">
+    <Files>
+      <File FileName="Assets/Scripts/Player.cs" Line="7" Column="1" />
+      <File FileName="Assets/Scripts/MovingObject.cs" Line="7" Column="5" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Good Luck Game Jam" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="MovingObject.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="278b93a6-da83-429b-a960-1167a138553d" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
