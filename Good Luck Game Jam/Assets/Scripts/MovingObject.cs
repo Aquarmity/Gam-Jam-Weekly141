@@ -9,10 +9,11 @@ public abstract class MovingObject : MonoBehaviour
 
     private BoxCollider2D boxCollider;
     private Rigidbody2D rb2D;
+    protected bool moving = false;
 
     private float inverseMoveTime;
 
-    protected virtual void start()
+    protected virtual void Start()
     {
         boxCollider = GetComponent<BoxCollider2D>();
         rb2D = GetComponent<Rigidbody2D>();
@@ -31,25 +32,27 @@ public abstract class MovingObject : MonoBehaviour
 
         if (hit.transform == null)
         {
-            SmoothMovement(end);
+            StartCoroutine(SmoothMovement(end));
             return true;
         }
         return false;
+        
 
     }
 
 
-    protected IEnumerator SmoothMovement(Vector3 End)
+    protected IEnumerator SmoothMovement(Vector3 end)
     {
-        float sqrDistanceRemaining = (transform.position - End).sqrMagnitude;
+        float sqrDistanceRemaining = (transform.position - end).sqrMagnitude;
 
         while (sqrDistanceRemaining > float.Epsilon)
         {
-            Vector3 newPosition = Vector3.MoveTowards(rb2D.position, End, inverseMoveTime * Time.deltaTime);
+            Vector3 newPosition = Vector3.MoveTowards(rb2D.position, end, inverseMoveTime * Time.deltaTime);
             rb2D.MovePosition(newPosition);
-            sqrDistanceRemaining = (transform.position - End).sqrMagnitude;
+            sqrDistanceRemaining = (transform.position - end).sqrMagnitude;
             yield return null;
         }
+        moving = false;
     }
 
     protected virtual void AttemptMove<T>(int xDir, int yDir)
@@ -67,6 +70,7 @@ public abstract class MovingObject : MonoBehaviour
         {
             OnCantMove(hitComponent);
         }
+        moving = false;
     }
 
 
