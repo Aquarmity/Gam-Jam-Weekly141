@@ -36,6 +36,7 @@ public abstract class MovingObject : MonoBehaviour
             return true;
         }
         return false;
+        
 
     }
 
@@ -69,6 +70,7 @@ public abstract class MovingObject : MonoBehaviour
         {
             OnCantMove(hitComponent);
         }
+        moving = false;
     }
 
 

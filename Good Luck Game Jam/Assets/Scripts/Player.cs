@@ -35,14 +35,16 @@ public class Player : MovingObject
         {
             //Call AttemptMove passing in the generic parameter Wall, since that is what Player may interact with if they encounter one (by attacking it)
             //Pass in horizontal and vertical as parameters to specify the direction to move Player in.
-            AttemptMove<Wall>(horizontal, vertical);
             moving = true;
+            AttemptMove<Wall>(horizontal, vertical);
+            
+
         }
     }
 
 
     protected override void OnCantMove<T>(T component)
     {
-
+        
     }
 }
