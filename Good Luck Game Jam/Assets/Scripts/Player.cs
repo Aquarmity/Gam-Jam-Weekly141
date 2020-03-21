@@ -59,7 +59,7 @@ public class Player : MovingObject
         }
 
         
-        print(message: die.top);
+        //print(message: die.top);
     }
 
 
