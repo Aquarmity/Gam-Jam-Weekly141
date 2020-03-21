@@ -2,17 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MovingObject
+public class Player : MovingObject 
 {
-
+    private Die die;
     protected override void Start()
     {
         base.Start();
+        die = GetComponent<Die>();
     }
 
     // Update is called once per frame
     void Update()
-    { 
+    {
+        
 
         if (moving == true)
         {
@@ -36,10 +38,28 @@ public class Player : MovingObject
             //Call AttemptMove passing in the generic parameter Wall, since that is what Player may interact with if they encounter one (by attacking it)
             //Pass in horizontal and vertical as parameters to specify the direction to move Player in.
             moving = true;
-            AttemptMove<Wall>(horizontal, vertical);
+            if (AttemptMove<Wall>(horizontal, vertical))
+            {
+                if (horizontal > 0 )
+                {
+                    die.Rrotate();
+                } else if (horizontal < 0)
+                {
+                    die.Lrotate();
+                } else if (vertical > 0)
+                {
+                    die.Urotate();
+                } else if (vertical < 0)
+                {
+                    die.Drotate();
+                }
+            }
             
 
         }
+
+        
+        print(message: die.top);
     }
 
 
