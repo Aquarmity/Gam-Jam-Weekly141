@@ -6,6 +6,7 @@ public class ChipStack : MovingObject
 {
 
     public GameObject player = null;
+    public float attackTimer = 0;
     public enum states {Wandering, Following, Attacking };
     public ChipStack.states state = states.Wandering;
 
@@ -24,13 +25,16 @@ public class ChipStack : MovingObject
     // Update is called once per frame
     void Update()
     {
+        
         selfTransform = GetComponent<Transform>().position;
-        if ((player.transform.position - selfTransform).magnitude < 3)
+        
+        if ((player.transform.position - selfTransform).magnitude < 2) {
+            state = states.Attacking;
+        } else if ((player.transform.position - selfTransform).magnitude < 4)
         {
             state = states.Following;
-        } else if ((player.transform.position - selfTransform).magnitude < 1) {
-            state = states.Attacking;
-        } else { 
+        } else
+        { 
             state = states.Wandering;
         }
 
@@ -38,6 +42,7 @@ public class ChipStack : MovingObject
         {
             if (state == states.Wandering)
             {
+                
                 RandomMovement(out int horizontal, out int vertical);
                 moving = true;
                 AttemptMove<Wall>(horizontal, vertical);
@@ -46,7 +51,19 @@ public class ChipStack : MovingObject
                 DirectedMovement(out int horizontal, out int vertical, player.transform.position);
                 moving = true;
                 AttemptMove<Wall>(horizontal, vertical);
-                
+               
+            } else if (state == states.Attacking)
+            {
+                attackTimer = attackTimer - Time.deltaTime;
+                if (attackTimer < 0)
+                {
+                    player.GetComponent<Player>().health -= 5;
+                    attackTimer = 5;
+                } 
+            }
+            if (state != states.Attacking)
+            {
+                attackTimer = 0;
             }
         }
             

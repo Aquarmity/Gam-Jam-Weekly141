@@ -1,22 +1,9 @@
 ﻿<Properties StartupConfiguration="{C1B31BA1-2623-786B-EE45-02F472329334}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/StartPress.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ChipStack.cs">
     <Files>
-      <File FileName="Assets/Scripts/Player.cs" Line="11" Column="35" />
-      <File FileName="Assets/Scripts/ChipStack.cs" Line="115" Column="1" />
-      <File FileName="Assets/Scripts/MovingObject.cs" Line="50" Column="96" />
-      <File FileName="Assets/Scripts/Wall.cs" />
-      <File FileName="Assets/Scripts/Die.cs" />
-      <File FileName="Library/PackageCache/com.unity.collab-proxy@1.2.16/Editor/Collab/CollabToolbarButton.cs" />
-      <File FileName="../../../../../../Applications/Unity/Hub/Editor/2019.3.6f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Editor/UI/InterceptedEventsPreview.cs" />
-      <File FileName="Library/PackageCache/com.unity.2d.spriteshape@3.0.8/Editor/SceneDragAndDrop.cs" />
-      <File FileName="Assets/Scripts/VolumeControl.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/ChipStack.cs" Line="115" Column="1" />
-      <File FileName="Assets/Scripts/LevelLoader.cs" Line="1" Column="1" />
-      <File FileName="../../../../../../Applications/Unity/Hub/Editor/2019.3.6f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/EventSystem.cs" Line="1" Column="1" />
-      <File FileName="../../../../../../Applications/Unity/Hub/Editor/2019.3.6f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/InputModules/StandaloneInputModule.cs" Line="38" Column="82" />
-      <File FileName="../../../../../../Applications/Unity/Hub/Editor/2019.3.6f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Layout/CanvasScaler.cs" Line="1" Column="1" />
-      <File FileName="../../../../../../Applications/Unity/Hub/Editor/2019.3.6f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/GraphicRaycaster.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/StartPress.cs" Line="10" Column="6" />
+      <File FileName="Assets/Scripts/Player.cs" Line="88" Column="8" />
+      <File FileName="Assets/Scripts/MovingObject.cs" Line="80" Column="1" />
+      <File FileName="Assets/Scripts/ChipStack.cs" Line="15" Column="6" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -24,7 +11,7 @@
           <Node name="Good Luck Game Jam" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="StartPress.cs" selected="True" />
+                <Node name="ChipStack.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -34,7 +21,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="87cfdf34-8d24-488a-bdba-11b2cc68a60a" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="d04c2e97-d91a-4629-a636-1e5ccb533886" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint enabled="false" file="/Users/lucasericsson/Documents/GitHub/Gam-Jam-Weekly141/Good Luck Game Jam/Assets/Scripts/j8r4rtzr.dbf~" relfile="Assets/Scripts/j8r4rtzr.dbf~" line="30" column="1" />

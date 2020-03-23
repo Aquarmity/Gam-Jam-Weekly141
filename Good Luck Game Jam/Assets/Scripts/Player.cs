@@ -1,20 +1,40 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MovingObject 
 {
+
+
+    public int max_Health = 100;
+    public int min_Health = 0;
+    public int health = 100;
+    public LayerMask enemyLayer;
+
+    public GameObject healthbar;
+
     private Die die;
+    private Slider slider;
+
+
+
+
     protected override void Start()
     {
         base.Start();
         die = GetComponent<Die>();
+        slider = healthbar.GetComponent<Slider>();
+        slider.maxValue = max_Health;
+        slider.minValue = min_Health;
+        
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        slider.value = health;
 
         if (moving == true)
         {
@@ -65,6 +85,6 @@ public class Player : MovingObject
 
     protected override void OnCantMove<T>(T component)
     {
-        
+       
     }
 }
