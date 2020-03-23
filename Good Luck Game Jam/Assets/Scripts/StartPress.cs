@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class StartPress : MonoBehaviour
 {
-
+    public LevelLoader lvloader;
     public void PlayGame () {
-    SceneManager.LoadScene("LevelAce");
+        lvloader.LoadNextLevel();
     }
 }
