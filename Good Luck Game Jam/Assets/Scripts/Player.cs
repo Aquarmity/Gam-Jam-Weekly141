@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class Player : MovingObject 
 {
@@ -25,8 +25,8 @@ public class Player : MovingObject
         base.Start();
         die = GetComponent<Die>();
         slider = healthbar.GetComponent<Slider>();
-        slider.maxValue = max_Health;
-        slider.minValue = min_Health;
+        slider.highValue = max_Health;
+        slider.lowValue = min_Health;
         
         
     }

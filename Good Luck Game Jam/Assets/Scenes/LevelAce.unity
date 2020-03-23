@@ -128,6 +128,32 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4518632869946284512, guid: 8ea6e99706ef96b45aa0baa0af2e229f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518632869946284512, guid: 8ea6e99706ef96b45aa0baa0af2e229f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -37
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518632869946284512, guid: 8ea6e99706ef96b45aa0baa0af2e229f,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 3996.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4518632869946284512, guid: 8ea6e99706ef96b45aa0baa0af2e229f,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 2359
+      objectReference: {fileID: 0}
+    - target: {fileID: 5544170064641772395, guid: 8ea6e99706ef96b45aa0baa0af2e229f,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6a200c729002d2a4b86ea0e40436409a,
+        type: 3}
     - target: {fileID: 6775768861952561685, guid: 8ea6e99706ef96b45aa0baa0af2e229f,
         type: 3}
       propertyPath: m_LocalPosition.x
