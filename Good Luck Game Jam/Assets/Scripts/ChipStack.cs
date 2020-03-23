@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class ChipStack : MovingObject
 {
-    
+
+    public GameObject player = null;
+    public enum states {Wandering, Following, Attacking };
+    public ChipStack.states state = states.Wandering;
+
+    private Vector3 selfTransform;
     // Start is called before the first frame update
     protected override void Start()
     {
@@ -19,13 +24,30 @@ public class ChipStack : MovingObject
     // Update is called once per frame
     void Update()
     {
+        selfTransform = GetComponent<Transform>().position;
+        if ((player.transform.position - selfTransform).magnitude < 3)
+        {
+            state = states.Following;
+        } else if ((player.transform.position - selfTransform).magnitude < 1) {
+            state = states.Attacking;
+        } else { 
+            state = states.Wandering;
+        }
 
         if (moving == false)
         {
-            
-            RandomMovement(out int horizontal,out int vertical);
-            moving = true;
-            AttemptMove<Wall>(horizontal, vertical);
+            if (state == states.Wandering)
+            {
+                RandomMovement(out int horizontal, out int vertical);
+                moving = true;
+                AttemptMove<Wall>(horizontal, vertical);
+            } else if (state == states.Following)
+            {
+                DirectedMovement(out int horizontal, out int vertical, player.transform.position);
+                moving = true;
+                AttemptMove<Wall>(horizontal, vertical);
+                
+            }
         }
             
     }
@@ -53,9 +75,40 @@ public class ChipStack : MovingObject
 
         }
     }
+    protected void DirectedMovement(out int horizontal, out int vertical, Vector3 playerTransform)
+    { 
+        if (playerTransform.x > selfTransform.x)
+        {
+            horizontal = 1;
+        } else if (playerTransform.x < selfTransform.x)
+        {
+            horizontal = -1;
+        } else
+        {
+            horizontal = 0;
+        }
+        if (playerTransform.y > selfTransform.y)
+        {
+            vertical = 1;
+        }
+        else if (playerTransform.y < selfTransform.y)
+        {
+            vertical = -1;
+        }
+        else
+        {
+            vertical = 0;
+        }
+
+        if (vertical != 0)
+        {
+            horizontal = 0;
+        }
+
+
+    }
     protected override void OnCantMove<T>(T component)
     {
 
     }
-
 }
