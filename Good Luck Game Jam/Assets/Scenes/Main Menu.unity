@@ -2495,7 +2495,7 @@ GameObject:
   - component: {fileID: 1226297242}
   - component: {fileID: 1226297243}
   m_Layer: 5
-  m_Name: Toggle
+  m_Name: MuteToggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
