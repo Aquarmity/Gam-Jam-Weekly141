@@ -19,6 +19,8 @@ public class Player : MovingObject
     private Die die;
     private Slider slider;
 
+    private Animator animator;
+
     public enum Facing {north, south, left, right};
 
     public Facing dir = Facing.north;
@@ -32,8 +34,8 @@ public class Player : MovingObject
         slider = healthbar.GetComponent<Slider>();
         slider.maxValue = max_Health;
         slider.minValue = min_Health;
-        
-        
+
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -55,6 +57,9 @@ public class Player : MovingObject
         if (moving == true)
         {
             return;
+        } else
+        {
+            animator.SetInteger("dir", 0);
         }
         
         //Get input from the input manager, round it to an integer and store in horizontal to set x axis move direction
@@ -90,19 +95,23 @@ public class Player : MovingObject
                 if (horizontal > 0)
                 {
                     die.Rrotate();
+                    animator.SetInteger("dir", 2);
 
                 }
                 else if (horizontal < 0)
                 {
                     die.Lrotate();
+                    animator.SetInteger("dir", 1);
                 }
                 else if (vertical > 0)
                 {
                     die.Urotate();
+                    animator.SetInteger("dir", 3);
                 }
                 else if (vertical < 0)
                 {
                     die.Drotate();
+                    animator.SetInteger("dir", 4);
                 }
             }
             attackbox.GetComponent<BoxCollider2D>().enabled = true;

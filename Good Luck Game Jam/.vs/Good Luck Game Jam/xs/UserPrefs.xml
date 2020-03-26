@@ -2,13 +2,10 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player.cs">
     <Files>
       <File FileName="Assets/Scripts/MovingObject.cs" Line="54" Column="111" />
-      <File FileName="Assets/Scripts/ChipStack.cs" Line="103" Column="32" />
-      <File FileName="Assets/Enemy_Health.cs" Line="18" Column="39" />
+      <File FileName="Assets/Scripts/ChipStack.cs" />
       <File FileName="Assets/Scripts/Player.cs" Line="92" Column="35" />
-      <File FileName="Assets/Player_Attack.cs" Line="26" Column="6" />
-      <File FileName="../../../../../../Applications/Unity/Hub/Editor/2019.3.6f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Image.cs" Line="9" Column="18" />
-      <File FileName="Assets/AnimatorEnemy.cs" Line="8" Column="24" />
-      <File FileName="../../../../../../Applications/Unity/Hub/Editor/2019.3.6f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Layout/CanvasScaler.cs" Line="254" Column="1" />
+      <File FileName="../../../../../../Applications/Unity/Hub/Editor/2019.3.6f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Image.cs" />
+      <File FileName="../../../../../../Applications/Unity/Hub/Editor/2019.3.6f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Layout/CanvasScaler.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -26,7 +23,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="957c3c64-8532-4a34-887f-2ee20d4dc96f" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="22626dfe-cea9-4f00-8ba4-5447ce3193d4" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint enabled="false" file="/Users/lucasericsson/Documents/GitHub/Gam-Jam-Weekly141/Good Luck Game Jam/Assets/Scripts/j8r4rtzr.dbf~" relfile="Assets/Scripts/j8r4rtzr.dbf~" line="30" column="1" />
