@@ -90,23 +90,19 @@ public class Player : MovingObject
                 if (horizontal > 0)
                 {
                     die.Rrotate();
-                    dir = Facing.right;
 
                 }
                 else if (horizontal < 0)
                 {
                     die.Lrotate();
-                    dir = Facing.left;
                 }
                 else if (vertical > 0)
                 {
                     die.Urotate();
-                    dir = Facing.north;
                 }
                 else if (vertical < 0)
                 {
                     die.Drotate();
-                    dir = Facing.south;
                 }
             }
             attackbox.GetComponent<BoxCollider2D>().enabled = true;

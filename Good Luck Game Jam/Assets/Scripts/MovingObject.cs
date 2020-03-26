@@ -51,7 +51,7 @@ public abstract class MovingObject : MonoBehaviour
 
         while (sqrDistanceRemaining > float.Epsilon)
         {
-            Vector3 newPosition = Vector3.MoveTowards(rb2D.position, end, inverseMoveTime * Time.deltaTime);
+            Vector3 newPosition = Vector3.MoveTowards(rb2D.position, end, inverseMoveTime * Time.deltaTime / 2);
             rb2D.MovePosition(newPosition);
             sqrDistanceRemaining = (transform.position - end).sqrMagnitude;
             yield return null;
