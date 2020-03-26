@@ -7,8 +7,12 @@ public class ChipStack : MovingObject
 
     public GameObject player = null;
     public float attackTimer = 0;
-    public enum states {Wandering, Following, Attacking };
-    public ChipStack.states state = states.Wandering;
+    public enum States {Wandering, Following, Attacking };
+    public States state = States.Wandering;
+    
+
+
+
 
     private Vector3 selfTransform;
     // Start is called before the first frame update
@@ -29,39 +33,41 @@ public class ChipStack : MovingObject
         selfTransform = GetComponent<Transform>().position;
         
         if ((player.transform.position - selfTransform).magnitude < 2) {
-            state = states.Attacking;
+            state = States.Attacking;
         } else if ((player.transform.position - selfTransform).magnitude < 4)
         {
-            state = states.Following;
+            state = States.Following;
         } else
         { 
-            state = states.Wandering;
+            state = States.Wandering;
         }
 
         if (moving == false)
         {
-            if (state == states.Wandering)
+            if (state == States.Wandering)
             {
-                
+
                 RandomMovement(out int horizontal, out int vertical);
                 moving = true;
                 AttemptMove<Wall>(horizontal, vertical);
-            } else if (state == states.Following)
+            }
+            else if (state == States.Following)
             {
                 DirectedMovement(out int horizontal, out int vertical, player.transform.position);
                 moving = true;
                 AttemptMove<Wall>(horizontal, vertical);
-               
-            } else if (state == states.Attacking)
+
+            }
+            else if (state == States.Attacking)
             {
                 attackTimer = attackTimer - Time.deltaTime;
                 if (attackTimer < 0)
                 {
                     player.GetComponent<Player>().health -= 5;
-                    attackTimer = 5;
-                } 
+                    attackTimer = 2;
+                }
             }
-            if (state != states.Attacking)
+            if (state != States.Attacking)
             {
                 attackTimer = 0;
             }

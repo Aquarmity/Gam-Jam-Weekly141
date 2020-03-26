@@ -4,8 +4,10 @@ using UnityEngine;
 
 public abstract class MovingObject : MonoBehaviour
 {
+
     public float moveTime = 0.1f;
     public LayerMask blockingLayer;
+    public LayerMask blockingLayer2;
 
     private BoxCollider2D boxCollider;
     private Rigidbody2D rb2D;
@@ -27,10 +29,10 @@ public abstract class MovingObject : MonoBehaviour
 
         boxCollider.enabled = false;
 
-        hit = Physics2D.Linecast(start, end, blockingLayer);
+        hit = Physics2D.Linecast(start, end, blockingLayer | blockingLayer2);
         boxCollider.enabled = true;
 
-        if (hit.transform == null)
+        if (hit.transform == null || hit.collider.isTrigger)
         {
             StartCoroutine(SmoothMovement(end));
             return true;

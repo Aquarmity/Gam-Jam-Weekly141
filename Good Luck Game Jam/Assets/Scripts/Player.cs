@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class Player : MovingObject 
 {
 
+    public GameObject attackbox;
 
     public int max_Health = 100;
     public int min_Health = 0;
@@ -18,6 +19,9 @@ public class Player : MovingObject
     private Die die;
     private Slider slider;
 
+    public enum Facing {north, south, left, right};
+
+    public Facing dir = Facing.north;
 
 
 
@@ -37,6 +41,16 @@ public class Player : MovingObject
     {
         slider.value = health;
 
+        
+        
+
+
+
+        //print(message: die.top);
+    }
+
+    private void FixedUpdate()
+    {
         if (moving == true)
         {
             return;
@@ -59,28 +73,58 @@ public class Player : MovingObject
             //Call AttemptMove passing in the generic parameter Wall, since that is what Player may interact with if they encounter one (by attacking it)
             //Pass in horizontal and vertical as parameters to specify the direction to move Player in.
             moving = true;
+
+            attackbox.GetComponent<BoxCollider2D>().enabled = false;
             if (AttemptMove<Wall>(horizontal, vertical))
             {
-                if (horizontal > 0 )
+                if (horizontal > 0)
                 {
                     die.Rrotate();
-                } else if (horizontal < 0)
+                    dir = Facing.right;
+
+                }
+                else if (horizontal < 0)
                 {
                     die.Lrotate();
-                } else if (vertical > 0)
+                    dir = Facing.left;
+                }
+                else if (vertical > 0)
                 {
                     die.Urotate();
-                } else if (vertical < 0)
+                    dir = Facing.north;
+                }
+                else if (vertical < 0)
                 {
                     die.Drotate();
+                    dir = Facing.south;
                 }
             }
-            
+            attackbox.GetComponent<BoxCollider2D>().enabled = true;
+            if (horizontal > 0)
+            {
+
+                dir = Facing.right;
+
+            }
+            else if (horizontal < 0)
+            {
+
+                dir = Facing.left;
+            }
+            else if (vertical > 0)
+            {
+
+                dir = Facing.north;
+            }
+            else if (vertical < 0)
+            {
+
+                dir = Facing.south;
+            }
+
 
         }
 
-        
-        //print(message: die.top);
     }
 
 
