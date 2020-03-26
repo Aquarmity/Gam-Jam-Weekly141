@@ -49,17 +49,27 @@ public class Player : MovingObject
         //print(message: die.top);
     }
 
+   
     private void FixedUpdate()
     {
         if (moving == true)
         {
             return;
         }
+        
         //Get input from the input manager, round it to an integer and store in horizontal to set x axis move direction
         int horizontal = (int)Input.GetAxisRaw("Horizontal");
+        
+
+        
 
         //Get input from the input manager, round it to an integer and store in vertical to set y axis move direction
         int vertical = (int)Input.GetAxisRaw("Vertical");
+
+      
+
+
+   
 
         //Check if moving horizontally, if so set vertical to zero.
         if (horizontal != 0)

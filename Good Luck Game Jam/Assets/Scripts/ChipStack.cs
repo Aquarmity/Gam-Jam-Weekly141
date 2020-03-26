@@ -9,8 +9,8 @@ public class ChipStack : MovingObject
     public float attackTimer = 0;
     public enum States {Wandering, Following, Attacking };
     public States state = States.Wandering;
-    
 
+    public GameObject animator_child;
 
 
 
@@ -30,16 +30,47 @@ public class ChipStack : MovingObject
     void Update()
     {
         
-        selfTransform = GetComponent<Transform>().position;
         
-        if ((player.transform.position - selfTransform).magnitude < 2) {
+            
+    }
+
+    private int lastDir = 0;
+    private void FixedUpdate()
+    {
+        selfTransform = GetComponent<Transform>().position;
+
+        if ((player.transform.position - selfTransform).magnitude < 2)
+        {
             state = States.Attacking;
-        } else if ((player.transform.position - selfTransform).magnitude < 4)
+            switch (lastDir) {
+                case 0:
+                    animator_child.GetComponent<AnimatorEnemy>().dir = 0;
+                    break;
+                case 1:
+                    animator_child.GetComponent<AnimatorEnemy>().dir = 1;
+                    break;
+                case 2:
+                    animator_child.GetComponent<AnimatorEnemy>().dir = 2;
+                    break;
+                case 3:
+                    animator_child.GetComponent<AnimatorEnemy>().dir = 3;
+                    break;
+                case 4:
+                    animator_child.GetComponent<AnimatorEnemy>().dir = 4;
+                    break;
+
+            }
+
+        }
+        else if ((player.transform.position - selfTransform).magnitude < 4)
         {
             state = States.Following;
-        } else
-        { 
+            animator_child.GetComponent<AnimatorEnemy>().dir = 0;
+        }
+        else
+        {
             state = States.Wandering;
+            animator_child.GetComponent<AnimatorEnemy>().dir = 0;
         }
 
         if (moving == false)
@@ -72,9 +103,7 @@ public class ChipStack : MovingObject
                 attackTimer = 0;
             }
         }
-            
     }
-
     protected void RandomMovement(out int horizontal, out int vertical)
     {
         int direction = Random.Range(1, 5);
@@ -103,9 +132,11 @@ public class ChipStack : MovingObject
         if (playerTransform.x > selfTransform.x)
         {
             horizontal = 1;
+            lastDir = 2;
         } else if (playerTransform.x < selfTransform.x)
         {
             horizontal = -1;
+            lastDir = 1;
         } else
         {
             horizontal = 0;
@@ -113,10 +144,12 @@ public class ChipStack : MovingObject
         if (playerTransform.y > selfTransform.y)
         {
             vertical = 1;
+            lastDir = 3;
         }
         else if (playerTransform.y < selfTransform.y)
         {
             vertical = -1;
+            lastDir = 4;
         }
         else
         {
