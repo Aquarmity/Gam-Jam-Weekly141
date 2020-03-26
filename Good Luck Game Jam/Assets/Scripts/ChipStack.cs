@@ -100,7 +100,7 @@ public class ChipStack : MovingObject
             }
             if (state != States.Attacking)
             {
-                attackTimer = 0;
+                attackTimer = 1f;
             }
         }
     }
