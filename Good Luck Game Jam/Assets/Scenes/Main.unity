@@ -518,6 +518,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chip Stack
       objectReference: {fileID: 0}
+    - target: {fileID: 826285582577042589, guid: a9da8e02097d7436ebe310da7746a2e9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.005037505
+      objectReference: {fileID: 0}
+    - target: {fileID: 826285582577042589, guid: a9da8e02097d7436ebe310da7746a2e9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.2491651
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9da8e02097d7436ebe310da7746a2e9, type: 3}
 --- !u!1 &610991301
@@ -756,6 +766,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Chip Stack
+      objectReference: {fileID: 0}
+    - target: {fileID: 826285582577042589, guid: a9da8e02097d7436ebe310da7746a2e9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 826285582577042589, guid: a9da8e02097d7436ebe310da7746a2e9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9da8e02097d7436ebe310da7746a2e9, type: 3}
@@ -1438,6 +1458,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Chip Stack
+      objectReference: {fileID: 0}
+    - target: {fileID: 4701701718692184587, guid: a9da8e02097d7436ebe310da7746a2e9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4701701718692184587, guid: a9da8e02097d7436ebe310da7746a2e9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9da8e02097d7436ebe310da7746a2e9, type: 3}

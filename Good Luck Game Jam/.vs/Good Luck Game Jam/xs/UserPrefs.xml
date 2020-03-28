@@ -1,12 +1,12 @@
 ﻿<Properties StartupConfiguration="{C1B31BA1-2623-786B-EE45-02F472329334}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ChipStack.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MoveGrid.cs">
     <Files>
       <File FileName="Assets/Scripts/MovingObject.cs" Line="66" Column="21" />
-      <File FileName="Assets/Scripts/ChipStack.cs" Line="72" Column="1" />
+      <File FileName="Assets/Scripts/ChipStack.cs" Line="79" Column="1" />
       <File FileName="Assets/Scripts/Player.cs" Line="72" Column="26" />
       <File FileName="../../../../../../Applications/Unity/Hub/Editor/2019.3.6f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Image.cs" Line="476" Column="1" />
       <File FileName="../../../../../../Applications/Unity/Hub/Editor/2019.3.6f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Layout/CanvasScaler.cs" Line="256" Column="1" />
-      <File FileName="Assets/Scripts/MoveGrid.cs" Line="33" Column="1" />
+      <File FileName="Assets/Scripts/MoveGrid.cs" Line="30" Column="1" />
       <File FileName="Assets/Scripts/Wall.cs" Line="17" Column="1" />
       <File FileName="Assets/Scripts/AnimatorEnemy.cs" Line="19" Column="1" />
       <File FileName="Assets/Scripts/Enemy_Health.cs" Line="29" Column="1" />
@@ -18,7 +18,7 @@
           <Node name="Good Luck Game Jam" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="ChipStack.cs" selected="True" />
+                <Node name="MoveGrid.cs" selected="True" />
               </Node>
             </Node>
           </Node>
