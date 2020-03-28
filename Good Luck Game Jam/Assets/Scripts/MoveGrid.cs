@@ -12,7 +12,7 @@ public class MoveGrid : MonoBehaviour
     public float speed = 0.1f;
     private float time;
 
-    protected void Start()
+    protected virtual void Start()
     {
         time = 1 / speed;
     }

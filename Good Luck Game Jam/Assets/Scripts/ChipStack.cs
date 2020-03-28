@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChipStack : MovingObject
+public class ChipStack : MoveGrid
 {
 
     public GameObject player = null;
@@ -10,31 +10,35 @@ public class ChipStack : MovingObject
     public enum States {Wandering, Following, Attacking };
     public States state = States.Wandering;
 
+    public Transform selfTransform;
     public GameObject animator_child;
 
+ 
 
 
-    private Vector3 selfTransform;
+
     // Start is called before the first frame update
     protected override void Start()
     {
         base.Start();
 
+        selfTransform = GetComponent<Transform>();
+
         Random.InitState(System.Environment.TickCount);
+        
 
 
 
     }
 
     // Update is called once per frame
-   
+
 
     private int lastDir = 0;
     private void Update()
     {
-        selfTransform = GetComponent<Transform>().position;
 
-        if ((player.transform.position - selfTransform).magnitude < 2)
+        if ((player.transform.position - selfTransform.position).magnitude < 2)
         {
             state = States.Attacking;
             switch (lastDir) {
@@ -57,7 +61,7 @@ public class ChipStack : MovingObject
             }
 
         }
-        else if ((player.transform.position - selfTransform).magnitude < 4)
+        else if ((player.transform.position - selfTransform.position).magnitude < 4)
         {
             state = States.Following;
             animator_child.GetComponent<AnimatorEnemy>().dir = 0;
@@ -68,38 +72,34 @@ public class ChipStack : MovingObject
             animator_child.GetComponent<AnimatorEnemy>().dir = 0;
         }
 
-        if (moving == false)
+
+        if (state == States.Wandering)
         {
-            if (state == States.Wandering)
-            {
 
-                RandomMovement(out int horizontal, out int vertical);
-                moving = true;
-                AttemptMove<Wall>(horizontal, vertical);
-            }
-            else if (state == States.Following)
+            RandomMovement(out int horizontal, out int vertical);
+            Move(horizontal, vertical);
+        }
+        else if (state == States.Following)
+        {
+            DirectedMovement(out int horizontal, out int vertical, player.transform.position);
+            Move(horizontal, vertical);
+        }
+        else if (state == States.Attacking)
+        {
+            attackTimer -= Time.deltaTime;
+            if (attackTimer < 0)
             {
-                DirectedMovement(out int horizontal, out int vertical, player.transform.position);
-                moving = true;
-                AttemptMove<Wall>(horizontal, vertical);
-
-            }
-            else if (state == States.Attacking)
-            {
-                attackTimer = attackTimer - Time.deltaTime;
-                if (attackTimer < 0)
-                {
-                    player.GetComponent<Player>().health -= 5;
-                    attackTimer = 2;
-                }
-            }
-            if (state != States.Attacking)
-            {
-                attackTimer = 1f;
+                player.GetComponent<Player>().health -= 5;
+                attackTimer = 2;
             }
         }
+        if (state != States.Attacking)
+        {
+            attackTimer = 1f;
+        }
+        
     }
-    protected void RandomMovement(out int horizontal, out int vertical)
+    void RandomMovement(out int horizontal, out int vertical)
     {
         int direction = Random.Range(1, 5);
 
@@ -124,11 +124,11 @@ public class ChipStack : MovingObject
     }
     protected void DirectedMovement(out int horizontal, out int vertical, Vector3 playerTransform)
     { 
-        if (playerTransform.x > selfTransform.x)
+        if (playerTransform.x > selfTransform.position.x)
         {
             horizontal = 1;
             lastDir = 2;
-        } else if (playerTransform.x < selfTransform.x)
+        } else if (playerTransform.x < selfTransform.position.x)
         {
             horizontal = -1;
             lastDir = 1;
@@ -136,12 +136,12 @@ public class ChipStack : MovingObject
         {
             horizontal = 0;
         }
-        if (playerTransform.y > selfTransform.y)
+        if (playerTransform.y > selfTransform.position.y)
         {
             vertical = 1;
             lastDir = 3;
         }
-        else if (playerTransform.y < selfTransform.y)
+        else if (playerTransform.y < selfTransform.position.y)
         {
             vertical = -1;
             lastDir = 4;
@@ -156,10 +156,6 @@ public class ChipStack : MovingObject
             horizontal = 0;
         }
 
-
-    }
-    protected override void OnCantMove<T>(T component)
-    {
 
     }
 }
