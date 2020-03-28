@@ -26,18 +26,7 @@ public class MoveGrid : MonoBehaviour
         {
             vertical = 0;
         }
-        RaycastHit2D hit;
-        Vector3 newPosition = Vector3.zero;
-        newPosition.x = horizontal;
-        newPosition.y = vertical;
-        BoxCollider.enabled = false;
-        hit = Physics2D.Linecast(transform.position, newPosition, blockingLayer | blockingLayer2);
-        BoxCollider.enabled = true;
-
-        if (hit.collider != null)
-        {
-            return false;
-        }
+        
 
         // if we are finally at the next grid location
         if ((Mathf.Floor(transform.position.x) == transform.position.x )&& (Mathf.Floor(transform.position.y) == transform.position.y))

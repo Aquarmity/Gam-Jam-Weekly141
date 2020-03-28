@@ -151,10 +151,7 @@ public class ChipStack : MoveGrid
             vertical = 0;
         }
 
-        if (vertical != 0)
-        {
-            horizontal = 0;
-        }
+
 
 
     }
