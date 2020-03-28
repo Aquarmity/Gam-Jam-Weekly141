@@ -27,15 +27,10 @@ public class ChipStack : MovingObject
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-        
-            
-    }
+   
 
     private int lastDir = 0;
-    private void FixedUpdate()
+    private void Update()
     {
         selfTransform = GetComponent<Transform>().position;
 

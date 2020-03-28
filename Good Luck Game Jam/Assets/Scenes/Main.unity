@@ -1774,6 +1774,11 @@ PrefabInstance:
       propertyPath: healthbar
       value: 
       objectReference: {fileID: 817749907}
+    - target: {fileID: 4353702947774524361, guid: 98db2cafa46444035855e1f5e8fc1370,
+        type: 3}
+      propertyPath: moveTime
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 4353702947774524362, guid: 98db2cafa46444035855e1f5e8fc1370,
         type: 3}
       propertyPath: m_FlipX

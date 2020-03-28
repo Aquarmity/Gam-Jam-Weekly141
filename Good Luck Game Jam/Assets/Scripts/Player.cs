@@ -38,22 +38,12 @@ public class Player : MovingObject
         animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        slider.value = health;
-
-        
-        
-
-
-
-        //print(message: die.top);
-    }
+    
 
    
-    private void FixedUpdate()
+    private void Update()
     {
+        slider.value = health;
         if (moving == true)
         {
             return;

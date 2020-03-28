@@ -1,11 +1,12 @@
 ﻿<Properties StartupConfiguration="{C1B31BA1-2623-786B-EE45-02F472329334}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MoveGrid.cs">
     <Files>
-      <File FileName="Assets/Scripts/MovingObject.cs" Line="54" Column="111" />
-      <File FileName="Assets/Scripts/ChipStack.cs" />
-      <File FileName="Assets/Scripts/Player.cs" Line="92" Column="35" />
+      <File FileName="Assets/Scripts/MovingObject.cs" Line="43" Column="9" />
+      <File FileName="Assets/Scripts/ChipStack.cs" Line="40" Column="31" />
+      <File FileName="Assets/Scripts/Player.cs" Line="72" Column="26" />
       <File FileName="../../../../../../Applications/Unity/Hub/Editor/2019.3.6f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Image.cs" />
       <File FileName="../../../../../../Applications/Unity/Hub/Editor/2019.3.6f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Core/Layout/CanvasScaler.cs" />
+      <File FileName="Assets/Scripts/MoveGrid.cs" Line="7" Column="5" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,7 +14,7 @@
           <Node name="Good Luck Game Jam" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="Player.cs" selected="True" />
+                <Node name="MoveGrid.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -23,7 +24,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="22626dfe-cea9-4f00-8ba4-5447ce3193d4" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="c19133bb-35bc-4511-9425-fed1018d8dc3" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint enabled="false" file="/Users/lucasericsson/Documents/GitHub/Gam-Jam-Weekly141/Good Luck Game Jam/Assets/Scripts/j8r4rtzr.dbf~" relfile="Assets/Scripts/j8r4rtzr.dbf~" line="30" column="1" />
